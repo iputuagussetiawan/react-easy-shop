@@ -7,6 +7,7 @@ import PrivacyPage from '../pages/PrivacyPage';
 import PurchasePage from '../pages/PurchasePage';
 import RefundPage from '../pages/RefundPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
+import NotificationPage from '../pages/NotificationPage';
 
 
 class AppRoute extends Component {
@@ -21,6 +22,7 @@ class AppRoute extends Component {
                     <Route exact path="/purchase" component={PurchasePage} />
                     <Route exact path="/refund" component={RefundPage} />
                     <Route exact path="/productdetails" component={ProductDetailsPage} />
+                    <Route exact path="/notification" component={NotificationPage} />
                    
                 </Switch>
             </BrowserRouter>
