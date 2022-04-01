@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import AboutPage from '../pages/AboutPage';
 import HomePage from '../pages/HomePage';
 import UserLoginPage from '../pages/UserLoginPage';
 import ContactPage from '../pages/ContactPage';
@@ -18,6 +19,7 @@ class AppRoute extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={HomePage} />
+                    <Route exact path="/about" component={AboutPage} />
                     <Route exact path="/login" component={UserLoginPage} />
                     <Route exact path="/contact" component={ContactPage} />
                     <Route exact path="/privacy" component={PrivacyPage} />
