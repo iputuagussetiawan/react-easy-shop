@@ -27,6 +27,6 @@ class UserLogin extends Component {
                 </Container>
             </Fragment>
         )
-     }
+    }
 }
 export default UserLogin
