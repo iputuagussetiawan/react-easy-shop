@@ -6,8 +6,6 @@ class MegaMenu extends Component {
         super();
     }
 
-  
-
     MegaMenu(){
         var acc = document.getElementsByClassName("accordion");
         var accNum = acc.length;
@@ -24,20 +22,31 @@ class MegaMenu extends Component {
             })
         }
     }
+
+    MenuItemClick=(event)=>{
+        event.target.classList.toggle("active");
+        var panel = event.target.nextElementSibling;
+        if(panel.style.maxHeight){
+            panel.style.maxHeight = null;
+        }else{
+            panel.style.maxHeight= panel.scrollHeight+ "px"
+        }
+    }
+
     render() {
-
-
         const CatList = this.props.data;
-        
         const MyView = CatList.map((CatList,i)=>{
             return <div key={i.toString()}>
-                <button className="accordion">
+                <button onClick={this.MenuItemClick} className="accordion">
                 <img className="accordionMenuIcon" src={CatList.category_image} />&nbsp; {CatList.category_name}
                 </button>
                 <div className="panel">
                     <ul>
-                        <li><a href="#" className="accordionItem" > Mans Tshirt 1</a></li>
-                        <li><a href="#" className="accordionItem" > Mans Tshirt 2</a></li>
+                        {
+                            (CatList.subcategory_name).map((SubList,i)=>{
+                                return <li><a href="#" className="accordionItem" >{SubList.subcategory_name} </a></li>
+                            })    
+                        }
                     </ul>
                 </div> 
             </div>
